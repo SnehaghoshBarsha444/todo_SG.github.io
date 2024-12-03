@@ -35,7 +35,7 @@ Experience the app in action: [Minimal To-Do App Live Demo](https://snehaghoshba
 
 ## 📸 Screenshots
 
-![Screenshot 2024-11-28 092143](https://github.com/user-attachments/assets/c3bd109e-3623-41c2-b515-87876ea182a9)
+
 
 *Figure 1: The main interface of the Minimal To-Do App.*
 
