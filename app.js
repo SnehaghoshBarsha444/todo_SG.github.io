@@ -40,7 +40,7 @@ document.getElementById('create-account-form').addEventListener('submit', functi
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Account created successfully!');
-    window.location.href = 'index1.html';
+    window.location.href = 'profile.html';
 });
 
 // Login Functionality
@@ -62,14 +62,14 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     if (user) {
         alert('Login successful!');
         window.localStorage.setItem('loggedInUser', user.username); // Store the username in localStorage
-        window.location.href = 'index1.html';
+        window.location.href = 'profile.html';
     } else {
         alert('Invalid email or password.');
     }
 });
 
 // Display Username on index1.html
-if (window.location.pathname.includes('index1.html')) {
+if (window.location.pathname.includes('profile.html')) {
     const loggedInUser = users[0]; // Assuming first user for demo
     if (loggedInUser) {
         document.body.innerHTML += `<h2>Welcome, ${loggedInUser.username}!</h2>`;
