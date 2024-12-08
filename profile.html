@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,7 +26,7 @@
       <div class="screen-backdrop"></div>
       <div class="home-screen screen">
         <div class="head-wrapper">
-          <!-- <div class="menu-btn">
+         <div class="menu-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -40,7 +40,7 @@
                 stroke-linejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
               />
-            </svg> </div> -->
+            </svg> </div>
             <nav>
               <input type="checkbox" id="sidebar-active">
               <label for="sidebar-active" class="open-sidebar-button">
@@ -53,7 +53,7 @@
                 </label>
           
                 <!-- NOT IN TUTORIAL: The <a> tags are linked to the subpages -->
-                <!-- <a class="home-link" href="index.html">Home</a>  -->
+                <!--
                 <a href="profile.html"><img src="images/icon.png" width="50" height="60">Home</a>
                 <a href="todo.html"><img src="images/ToDo.png" width="55" height="50">ToDo List</a>
                 <a href="notes.html"><img src="images/notes.png" width="50" height="50">Note Down</a>
@@ -106,7 +106,7 @@
           </div>
         </div>
       </div>
-    <!--<div class="category-screen screen">
+    <div class="category-screen screen">
         <div class="head-wrapper">
           <div class="back-btn">
             <svg
@@ -240,7 +240,109 @@
         usernameElement.textContent = `Hello, ${loggedInUser }!`;
     }
 });
-      </script>-->
+      </script>
+    <script src="script.js"></script>
+  </body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Minimal To-Do App || By Sneha Ghosh (Technical_Isopod_075)</title>
+    <meta
+      name="description"
+      content="Manage your tasks effortlessly with our JavaScript Todos List App. Organize, prioritize, and track your to-dos seamlessly using this user-friendly web application."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript Todos List App, Task Management, To-Do List Web App, Organize Tasks, Track To-Dos, Simple Task Manager, Productivity Tool, User-Friendly Interface, Web-based Task Organizer, JavaScript Task Tracker"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="screen-backdrop"></div>
+      <div class="home-screen screen">
+        <div class="head-wrapper">
+          <nav>
+            <input type="checkbox" id="sidebar-active" />
+            <label for="sidebar-active" class="open-sidebar-button">
+              <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            </label>
+            <label id="overlay" for="sidebar-active"></label>
+            <div class="links-container">
+              <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+              </label>
+              <a href="profile.html"><img src="images/icon.png" width="50" height="60" />Home</a>
+              <a href="todo.html"><img src="images/ToDo.png" width="55" height="50" />ToDo List</a>
+              <a href="notes.html"><img src="images/notes.png" width="50" height="50" />Note Down</a>
+              <a href="clock.html"><img src="images/clock.png" width="50" height="50" />Instant Timer</a>
+              <a href="calender.html"><img src="images/calendar.png" width="50" height="50" />Calendar</a>
+              <a href="water.html"><img src="images/water.png" width="60" height="60" />Drinking Water</a>
+            </div>
+          </nav>
+          <div class="welcome">
+            <div class="content">
+              <h1>Hello Dear!</h1>
+              <p>Get Organized, Stay Focused</p>
+            </div>
+            <div class="img">
+              <div class="backdrop"></div>
+              <img src="images/girl3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="categories-wrapper">
+          <div class="categories">
+            <div class="category">
+              <div class="left">
+                <img src="images/sun.png" alt="sun" />
+                <div class="content">
+                  <h1>Be Productive</h1>
+                  <p>Today's Quotes</p>
+                </div>
+              </div>
+              <div class="options">
+                <div class="toggle-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const loggedInUser = window.localStorage.getItem("loggedInUser"); // Ensure no extra space in the key
+          if (loggedInUser) {
+            const usernameElement = document.querySelector("#welcome-username"); // Ensure this element exists
+            if (usernameElement) {
+              usernameElement.textContent = `Hello, ${loggedInUser}!`;
+            }
+          }
+        });
+      </script>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
+
