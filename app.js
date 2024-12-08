@@ -1,4 +1,4 @@
-/*
+
 const container = document.querySelector('.container');
 const registerbtn = document.querySelector('.register-btn');
 const loginbtn = document.querySelector('.login-btn');
@@ -63,8 +63,6 @@ if (window.location.pathname.includes('profile.html')) {
         document.body.innerHTML += `<h2>Welcome, ${loggedInUser.username}!</h2>`;
     }
 } 
-*/
-
 
 
 function handleGoogleCredentialResponse(response) {
