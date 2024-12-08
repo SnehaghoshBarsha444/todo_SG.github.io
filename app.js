@@ -1,16 +1,4 @@
-// const container = document.querySelector('.container');
-// const registerbtn = document.querySelector('.register-btn');
-// const loginbtn = document.querySelector('.login-btn');
-
-// registerbtn.addEventListener('click', ()=>{
-//     container.classList.add('active');
-// });
-
-// loginbtn.addEventListener('click', ()=>{
-//     container.classList.remove('active');
-// });
-
-// Toggle between Login and Registration forms
+/*
 const container = document.querySelector('.container');
 const registerbtn = document.querySelector('.register-btn');
 const loginbtn = document.querySelector('.login-btn');
@@ -75,3 +63,32 @@ if (window.location.pathname.includes('profile.html')) {
         document.body.innerHTML += `<h2>Welcome, ${loggedInUser.username}!</h2>`;
     }
 } 
+*/
+
+
+
+function handleGoogleCredentialResponse(response) {
+    // Decode the JWT credential
+    const decoded = parseJwt(response.credential);
+
+    // Display user information or store it locally
+    console.log(decoded);
+    alert(`Welcome, ${decoded.name}!`);
+
+    // Redirect to the profile page or perform other actions
+    localStorage.setItem('googleUser', JSON.stringify(decoded));
+    window.location.href = 'profile.html';
+}
+
+// Helper function to parse JWT token
+function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split('')
+            .map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`)
+            .join('')
+    );
+    return JSON.parse(jsonPayload);
+}
