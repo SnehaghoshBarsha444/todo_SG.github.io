@@ -412,8 +412,7 @@ let categories = [
  
 
 
-*/
-
+/*
 
 // API Key for OpenAI
 const API_KEY = "proj_0sfTTLyfEDnYRQllk6sUdQBO";
@@ -733,4 +732,4 @@ const init = () => {
 };
 
 init();
-/*
+*/
