@@ -664,17 +664,70 @@ const suggestionBtn = document.getElementById("suggestion-btn");
 
 // Attach event listeners
 backBtn.addEventListener("click", togglescreen);
-  addTaskBtn.addEventListener("click", toggleAddTaskForm);
-  blackBackdrop.addEventListener("click", toggleAddTaskForm);
-  addBtn.addEventListener("click", addTask);
-  cancelBtn.addEventListener("click", toggleAddTaskForm);
+  backBtn.addEventListener("click", () => {
+ screenWrapper.classList.toggle("show-category");
+});
+
+addTaskBtn.addEventListener("click", () => {
+  addTaskWrapper.classList.add("show");
+  blackBackdrop.classList.add("show");
+});
+
+blackBackdrop.addEventListener("click", () => {
+  addTaskWrapper.classList.remove("show");
+  blackBackdrop.classList.remove("show");
+});
+
+cancelBtn.addEventListener("click", () => {
+  addTaskWrapper.classList.remove("show");
+  blackBackdrop.classList.remove("show");
+});
+
+addBtn.addEventListener("click", () => {
+  const input = document.getElementById("task");
+  const taskText = input.value.trim();
+
+  if (!taskText) return alert("Task cannot be empty!");
   
-  // Render initial state
-  getLocal();
+  const newTask = {
+    id: tasks.length + 1,
+    task: taskText,
+    category: selectedCategory.title,
+    completed: false,
+  };
+
+  tasks.push(newTask);
+  saveLocal();
   renderTasks();
-  categories.forEach((category) => {
-    const option = document.createElement("option");
-    option.value = category.title.toLowerCase();
-    option.textContent = category.title;
-    categorySelect.appendChild(option);
-  });
+
+  input.value = "";
+  addTaskWrapper.classList.remove("show");
+  blackBackdrop.classList.remove("show");
+});
+
+// Handle suggestion button click
+suggestionBtn.addEventListener("click", async () => {
+  suggestionBtn.textContent = "Fetching...";
+  suggestionBtn.disabled = true;
+
+  try {
+    await addSuggestions();
+    alert("Suggestions added successfully!");
+  } catch (error) {
+    console.error("Error fetching suggestions:", error);
+    alert("Failed to fetch suggestions. Please try again.");
+  }
+
+  suggestionBtn.textContent = "Get Suggestions";
+  suggestionBtn.disabled = false;
+});
+
+// Load tasks from local storage and initialize
+const init = () => {
+  getLocal();
+  renderCategories();
+  updateTotals();
+  renderTasks();
+};
+
+init();
