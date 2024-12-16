@@ -1,4 +1,4 @@
-*/
+/*
 let categories = [
     {
       title: "Personal",
@@ -409,8 +409,7 @@ let categories = [
     categorySelect.appendChild(option);
   });
 
- /*
-
+ */
 
 
 
