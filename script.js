@@ -1,4 +1,4 @@
-/*
+
 let categories = [
     {
       title: "Personal",
@@ -409,8 +409,10 @@ let categories = [
     categorySelect.appendChild(option);
   });
 
- */
+ 
 
+
+*/
 
 
 // API Key for OpenAI
@@ -731,3 +733,4 @@ const init = () => {
 };
 
 init();
+/*
