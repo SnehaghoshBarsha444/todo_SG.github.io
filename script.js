@@ -693,11 +693,11 @@ addBtn.addEventListener("click", addTask);
 cancelBtn.addEventListener("click", toggleAddTaskForm);
 
 // Attach AI suggestion button
-const aiBtn = document.createElement("button");
-aiBtn.textContent = "Get AI Suggestions";
-aiBtn.classList.add("ai-suggestions-btn");
-aiBtn.addEventListener("click", handleAIRequest);
-document.body.appendChild(aiBtn);
+// const aiBtn = document.createElement("button");
+// aiBtn.textContent = "Get AI Suggestions";
+// aiBtn.classList.add("ai-suggestions-btn");
+// aiBtn.addEventListener("click", handleAIRequest);
+// document.body.appendChild(aiBtn);
 
 // Render initial state
 getLocal();
